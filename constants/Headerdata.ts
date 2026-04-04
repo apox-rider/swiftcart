@@ -25,8 +25,9 @@ export const quickLinks = [
 ]
 
 export const productTypes = [
-    {title:'Power Tools', value:'drills,saws' ,href:'/power'},
-    {title:'Hand Tools', value:'wrenches,screw drivers',href:'/hand'},
-    {title:'Tech Tools', value:'measuring tools',href:'/tech'},
-    {title:'Fasteners', value:'hingesand switches',href:'/bulk'},
+    {title:'Power', value:'drills,saws' ,href:'/power'},
+    {title:'Hand', value:'wrenches,screw drivers',href:'/hand'},
+    {title:'Tech', value:'measuring tools',href:'/tech'},
+    {title:'Fastener', value:'hingesand switches',href:'/bulk'},
+    {title:'Other', value:'other categories',href:'/other'},
 ]

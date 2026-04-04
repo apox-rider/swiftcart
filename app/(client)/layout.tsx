@@ -24,7 +24,7 @@ export default function RootLayout({
     <ClerkProvider>
           <Header />
           <TooltipProvider>
-            <div className="flex flex-col min-h-screen">
+            <div className="flex flex-col">
               <main className="flex-1 ">
                 {children}
               </main>

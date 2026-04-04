@@ -8,15 +8,14 @@ interface Props{
 }
 
 export default function HomeTabBar({selectedTab,onTabselect}:Props) {
-  console.log(selectedTab)
   return (
     <div className='flex justify-between items-center flex-wrap gap-5'>
-      <div className='flex gap-1.5  items-center font-semibold text-sm justify-between'>
+      <div className='flex items-center md:gap-1.5 font-semibold text-sm  '>
         {productTypes.map((type,index)=>(
                 <button
                 onClick={()=>onTabselect(type?.title)}
                 key={index}
-                className={`border border-shop-dark-green/30 px-4 py-1.5 md:px-6 md:py-2 rounded-full hover:bg-shop-light-green hover:border-shop-dark-green ${selectedTab===type?.title?'bg-shop-light-green ':'bg-shop-light-green/15'}` }
+                className={`border border-shop-dark-green/20 px-2 py-1 md:px-6 md:py-2 rounded-full hover:bg-shop-dark-green hover:border-shop-dark-green ${selectedTab===type?.title?'bg-shop-dark-green ':'bg-shop-dark-green/20'}` }
                 >
                 {type.title}
                 </button>
@@ -24,7 +23,7 @@ export default function HomeTabBar({selectedTab,onTabselect}:Props) {
       </div>
       <Link
       href={"/shop"}
-      className=' rounded-4xl justify-end'>
+      className='justify-end text-sm border border-shop-dark-green/20 px-2 py-1 md:px-6 md:py-2 rounded-full hover:bg-shop-dark-green hover:border-shop-dark-green'>
       See All
       </Link>
     </div>

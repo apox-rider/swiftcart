@@ -1,17 +1,56 @@
 'use client'
 import HomeTabBar from '@/components/HomeTabBar'
 import { productTypes } from '@/constants/Headerdata'
-import { useState } from "react"
+import { client } from '@/sanity/lib/client'
+import { useEffect, useState } from "react"
+import {motion } from "motion/react"
+import { Loader2 } from 'lucide-react'
+import NoProduct from './NoProduct'
 
 export default function ProductGrid() {
-  const [product,setProduct]=useState([])
+  const [products,setProducts]=useState([])
   const[loading,setLoading]=useState(false)
   const[activeTab,setActiveTab]=useState(productTypes[0]?.title||"")
 
+  const query= `*[__type==product && variant== $variant] | order(name desc){
+  ...,"categories":categories[]->title
+}`
+const params={variant:activeTab.toLowerCase()}
+
+useEffect(()=>{
+  const fetchData=async ()=>{
+    setLoading(true)
+    try {
+      const response=await client.fetch(query,params);
+      setProducts(response)
+    } catch (error) {
+      console.error(`Error fetching data`,error)
+    }finally{
+      setLoading(false)
+    }
+  }
+  fetchData()
+},[activeTab])
+
   return (
     <div>
-      <HomeTabBar selectedTab={activeTab} onTabselect={setActiveTab}/>
-      ProductGrid
+    <HomeTabBar selectedTab={activeTab} onTabselect={setActiveTab}/>
+    {loading?(
+    <div className='flex flex-col items-center justify-center p-10 min-h-80 gap-4 bg-gray-100 w-full text-shop-dark-purple mt-10'>
+      <div className='space-x-2 flex items-center '>
+        <Loader2 className='w-5 h-6 animate-spin'/>
+        <span>Product is loading...</span>
+      </div>
+    </div>
+    ):(
+     products.length>0?
+     <>
+      <div>
+        Products
+      </div>
+     </>:
+     <NoProduct/>
+    )}  
     </div>
   )
 }
