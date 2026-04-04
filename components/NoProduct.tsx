@@ -7,3 +7,4 @@ export default function NoProduct() {
     </div>
   )
 }
+// Ended here today when creating No product component
