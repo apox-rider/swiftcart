@@ -33,7 +33,7 @@ useEffect(()=>{
   }
   fetchData()
 },[activeTab])
-
+ 
   return (
     <div>
     <HomeTabBar selectedTab={activeTab} onTabselect={setActiveTab}/>
