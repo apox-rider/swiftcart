@@ -15,7 +15,7 @@ export default function ProductGrid() {
   const[activeTab,setActiveTab]=useState(productTypes[0]?.title||"")
 
   const query= `*[__type==product && variant== $variant] | order(name desc){
-  ...,"categories":categories[]->title
+  ...,"categories":categories[]->title 
 }`
 const params={variant:activeTab.toLowerCase()}
 
