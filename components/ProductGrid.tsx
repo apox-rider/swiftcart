@@ -7,7 +7,7 @@ import {AnimatePresence, motion } from "motion/react"
 import { Loader2 } from 'lucide-react'
 import NoProduct from './NoProduct'
 import ProductCard from './ProductCard'
-import { Product } from '@/sanity.types'
+import { Product } from '@/sanity.types' 
 
 export default function ProductGrid() {
   const [products,setProducts]=useState<Product[]>([])
