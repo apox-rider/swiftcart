@@ -1,7 +1,6 @@
 import { defineField, defineType } from "sanity";
 import { TrolleyIcon } from "@sanity/icons";
-import { de } from "date-fns/locale";
-import { sub } from "date-fns";
+
 
 export const productType = defineType({
     name:'product',
@@ -87,8 +86,8 @@ export const productType = defineType({
                 list:[
                     {title:'Power', value:'power'},
                     {title:'Hand', value:'hand'},
-                    {title:'Tech', value:'tech'},
-                    {title:'Fastener', value:'fasteners'},
+                    {title:'Tech', value:'tech '},
+                    {title:'Fastener', value:'fastener'},
                     {title:'Other', value:'other'},
                 ],
             },

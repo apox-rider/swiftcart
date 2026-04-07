@@ -9,7 +9,7 @@ interface Props{
 
 export default function HomeTabBar({selectedTab,onTabselect}:Props) {
   return (
-    <div className='flex justify-between items-center flex-wrap gap-5'>
+    <div className='flex justify-between items-center flex-wrap gap-3 md:gap-5 lg:gap-6'>
       <div className='flex items-center md:gap-1.5 font-semibold text-sm  '>
         {productTypes.map((type,index)=>(
                 <button
