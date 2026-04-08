@@ -1,10 +1,11 @@
 'use client'
 import { Product } from '@/sanity.types';
 import { urlFor } from '@/sanity/lib/image';
-import { Flame, FlameIcon, Heart } from 'lucide-react';
+import { Flame, FlameIcon, Heart, StarIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import AddToWishlistButoon from './AddToWishlistButoon';
+import { Title } from './text';
 
 
 
@@ -12,7 +13,15 @@ export default function ProductCard({product}:{product:Product}) {
   return (
     <div className='text-sm border border-shop-dark-blue/20  bg-lightColor rounded-md group'>
       <div className='relative group overflow-hidden bg-shop-dark-cyan'>
-        {product?.image && <Image src={urlFor(product?.image[0]).url()} alt='Product Image' loading='lazy' width={700} height={700}/>}
+        {product?.image && 
+        <Image 
+        src={urlFor(product?.image[0]).url()} 
+        alt='Product Image' 
+        loading='lazy' 
+        width={700} 
+        height={700}
+        className={`w-full h-64 transition-transform bg-shop-light-purple hoverEffect ${product?.stock!==0?"group-hover:scale-105":"opacity-50"}`}
+        />}
 
         <AddToWishlistButoon product={product} />
         
@@ -30,7 +39,20 @@ export default function ProductCard({product}:{product:Product}) {
             />
           </Link>}
       </div>
-      <div className='p-3 flex flex-col'>Product Details</div>
+      <div className='p-3 flex flex-col font-black'>
+      <p className='text-shop-light-gray uppercase text-xs line-clamp-1'>
+        {product?.categories?.map((cat)=>cat).join(", ")}
+      </p>
+      <Title className='text-black text-sm line-clamp-1'>{product?.name}</Title>
+      <div className='flex items-center gap-2'>
+        <div className='flex items-center  '>
+          {[...Array(5)].map((_,index)=>(
+            <StarIcon key={index} size={13} className={`${index<4?"text-black":""}`} fill={`${index<4?"yellow":"white"}`}/>
+          ))}
+          <p className='text-shop-dark-orange tracking-wide text-xs'>5 Reviews</p>
+        </div>
+      </div>
+      </div>
     </div>
   )
 }

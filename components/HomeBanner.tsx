@@ -20,7 +20,7 @@ export default function HomeBanner() {
         <Image 
         src={banner}
         alt="Home Banner" 
-        className='hidden w-96 md:inline-flex shadow-lg rounded-3xl ' />
+        className='hidden h-68 w-96 md:inline-flex shadow-lg rounded-3xl md:mt-15 animate-bounce ' />
       </div>
     </div>
   )

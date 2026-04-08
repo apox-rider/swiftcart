@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 import {motion} from 'framer-motion'
 import { Loader2 } from 'lucide-react';
 
-export default function NoProduct({selectedTab,className}:{selectedTab?:string;className?:string}) {
+export default function NoProduct({selectedTab,className,isShop}:{selectedTab?:string;className?:string;isShop?:boolean}) {
   return (
     <div
     className={cn(`flex flex-col items-center justify-center py-10 min-h-80 space-y-4 text-center bg-gray-400 rounded-lg w-full mt-10`,className)}>
@@ -15,7 +15,8 @@ export default function NoProduct({selectedTab,className}:{selectedTab?:string;c
         No Product Available
         </h2> 
       </motion.div>
-
+      {!isShop?
+      <>
       <motion.p
       initial={{opacity:0}}
       animate={{opacity:1}}
@@ -27,6 +28,20 @@ export default function NoProduct({selectedTab,className}:{selectedTab?:string;c
         </span>{" "}
         criteria at the moment.
       </motion.p>
+      </>:
+      <>
+      <motion.p
+      initial={{opacity:0}}
+      animate={{opacity:1}}
+      transition={{delay:0.2,duration:0.5}}
+      className='text-gray-600'>
+        We&apos;re sorry, but no products found in {" "} 
+        <span className='text-base uppercase font-semibold text-darkColor'>
+          stock
+        </span>{" "}
+        at the moment.
+      </motion.p>
+      </>}
 
       <motion.div
       animate={{scale:[1,1.1,1]}}
@@ -36,7 +51,9 @@ export default function NoProduct({selectedTab,className}:{selectedTab?:string;c
         <Loader2 className='w-5 h-6 animate-spin'/>
         <span>We&apos;re restocking shortly</span>
       </motion.div>
-
+      {
+        !isShop?
+        <>
       <motion.p
       initial={{opacity:0}}
       animate={{opacity:1}}
@@ -45,6 +62,18 @@ export default function NoProduct({selectedTab,className}:{selectedTab?:string;c
       >
         Please check back later or explore our other product categories
       </motion.p>
+        </>:
+        <>
+      <motion.p
+      initial={{opacity:0}}
+      animate={{opacity:1}}
+      transition={{delay:0.4,duration:0.5}}
+      className='text-sm text-gray-500'
+      >
+        Try again in a while ,we&apos;ll be back shortly. 
+      </motion.p>
+        </>
+      }
     </div>
   )
 }

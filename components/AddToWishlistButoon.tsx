@@ -1,10 +1,14 @@
+import { cn } from '@/lib/utils'
 import { Product } from '@/sanity.types'
+import { HeartIcon } from 'lucide-react'
 import React from 'react'
 
 export default function AddToWishlistButoon({product,className}:{product:Product,className?:string}) {
   return (
-    <div className='absolute top-2 right-2 '>
-      Add
+    <div className={cn(`absolute top-2 right-2 z-10 `,className)}>
+      <button className='hover:bg-shop-dark-green bg-shop-lighter rounded-full p-1 hover:text-white hoverEffect'>
+        <HeartIcon size={18} fill='white' className='p-0.5'/>
+      </button>
     </div>
   )
 }
