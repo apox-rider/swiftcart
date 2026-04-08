@@ -1,5 +1,4 @@
 'use client'
-import React, { useRef } from 'react'
 import Logo from './Logo';
 import { X } from 'lucide-react';
 import headerData from '@/constants/Headerdata';
@@ -39,10 +38,10 @@ export default function SideMenu({ isopen, onclose }: SideMenuProps) {
             <span className='bg-shop-dark-cyan h-0.5 min-w-full  '/>            
         </div>
         <SocialMedia className='border-b border-white'/>
-        <div className='flex flex-col'>
+        {/* <div className='flex flex-col'>
           <p>Translator</p>
           <div  id="google_translate_element"/>
-        </div>
+        </div> */}
       </div>
     </div>
   )
