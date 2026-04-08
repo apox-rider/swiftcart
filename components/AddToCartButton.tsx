@@ -1,9 +1,28 @@
-import React from 'react'
+'use client'
+import { Product } from '@/sanity.types'
+import { Button } from './ui/button';
+import { ShoppingBagIcon } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
-export default function AddToCartButton() {
+interface Props{
+    product:Product,
+    className?:string
+}
+
+export default function AddToCartButton({product,className}:Props) {
+    const isOutOfStock= product?.stock===0;
+    const handleAddtoCart=()=>{
+        window.alert("Added to Cart")
+    }
   return (
     <div>
-      Add
+    <Button 
+    onClick={handleAddtoCart}
+    disabled={isOutOfStock}
+    className={cn('w-full font-semibold tracking-wide text-white bg-black md:bg-black/80  rounded-full hover:bg-white hover:text-shop-dark-purple hoverEffect',className)}>
+      <ShoppingBagIcon/>{isOutOfStock?"Out Of Stock":"Add to Cart"}
+    </Button>
     </div>
   )
 }
+ 

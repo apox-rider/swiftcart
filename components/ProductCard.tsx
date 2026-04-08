@@ -19,7 +19,7 @@ export default function ProductCard({product}:{product:Product}) {
         <Image 
         src={urlFor(product?.image[0]).url()} 
         alt='Product Image' 
-        loading='lazy' 
+        loading='eager' 
         width={700} 
         height={700}
         className={`w-full h-64 transition-transform bg-shop-light-purple hoverEffect ${product?.stock!==0?"group-hover:scale-105":"opacity-50"}`}
@@ -59,7 +59,7 @@ export default function ProductCard({product}:{product:Product}) {
           <p className={`text-sm ${product?.stock===0?"text-red-600":" text-shop-dark-purple/80 font-semibold"} `}>{(product?.stock as number)>0?product?.stock:"unavailable"}</p>
       </div>
        <PriceView price={product?.price} discount={product?.discountPrice} className="text-sm"/>
-       <AddToCartButton/>
+       <AddToCartButton product={product} className={` rounded-full`}/>
       </div>
     </div>
   )

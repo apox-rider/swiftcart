@@ -15,7 +15,7 @@ import { cn } from '@/lib/utils'
 export default async function Header({className}:{className?:string}) {
   const user=await currentUser()
   return (
-    <header className={cn(`bg-white py-3 border-b border-gray-200  `,className)}>
+    <header className={cn(`bg-white/70 py-3 border-b border-gray-200 sticky top-0 backdrop-blur-md z-50 `,className)}>
         <Container className='flex items-center justify-between max-w-full'>
             <div className='w-auto gap-2.5 md:w-1/3 flex md:gap-0 items-center justify-start '>
               <MobileMenu />
