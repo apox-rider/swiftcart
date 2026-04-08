@@ -38,7 +38,7 @@ useEffect(()=>{
 },[])
  
   return (
-    <div >
+    <div className='px-5 pb-5'>
     {loading?(
     <div className='flex flex-col items-center justify-center p-10 min-h-80 gap-4 bg-gray-100 w-full text-shop-dark-purple mt-10'>
       <div className='space-x-2 flex items-center '>
