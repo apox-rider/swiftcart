@@ -6,6 +6,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import AddToWishlistButoon from './AddToWishlistButoon';
 import { Title } from './text';
+import PriceView from './PriceView';
+import AddToCartButton from './AddToCartButton';
 
 
 
@@ -54,9 +56,10 @@ export default function ProductCard({product}:{product:Product}) {
       </div>
       <div className='flex items-center gap-2.5  text-black'>
           <p className='font-medium'>In-Stock:</p>
-          <p className={`text-sm text-shop-dark-purple/80 font-semibold `}>{(product?.stock as number)>0?product?.stock:"unavailable"}</p>
+          <p className={`text-sm ${product?.stock===0?"text-red-600":" text-shop-dark-purple/80 font-semibold"} `}>{(product?.stock as number)>0?product?.stock:"unavailable"}</p>
       </div>
-
+       <PriceView price={product?.price} discount={product?.discountPrice} className="text-sm"/>
+       <AddToCartButton/>
       </div>
     </div>
   )
