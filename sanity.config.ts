@@ -1,4 +1,5 @@
 'use client'
+// import {documentInternationalization } from '@sanity/document-internationalization'
 
 /**
  * This configuration is used to for the Sanity Studio that’s mounted on the `/app/studio/[[...tool]]/page.tsx` route
@@ -21,6 +22,13 @@ export default defineConfig({
   schema,
   plugins: [
     structureTool({structure}),
+    // documentInternationalization({
+    //   supportedLanguages:[
+    //     {id:'en',title:'English'},
+    //     {id:'sw',title:'Swahili'},
+    //   ],
+    //   schemaTypes:['product']
+    // }),
     // Vision is for querying with GROQ from inside the Studio
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({defaultApiVersion: apiVersion}),

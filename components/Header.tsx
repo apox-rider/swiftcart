@@ -31,6 +31,9 @@ export default async function Header({className}:{className?:string}) {
                   {!user && <SignIn />}
                 </ClerkLoaded>
             </div>
+            <div className='border-shop-dark-purple rounded-full '>
+              <div id="google_translate_element"/>
+            </div>
         </Container>
     </header>
   )
