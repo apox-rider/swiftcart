@@ -13,7 +13,7 @@ import AddToCartButton from './AddToCartButton';
 
 export default function ProductCard({product}:{product:Product}) {
   return (
-    <div className='text-sm border border-shop-dark-blue/20  bg-lightColor rounded-md group'>
+    <div className='text-sm border dark:border-[#415A77] border-shop-dark-blue/20  bg-white dark:bg-shop-dark-product rounded-md group'>
       <div className='relative group overflow-hidden bg-shop-dark-cyan'>
         {product?.image && 
         <Image 
@@ -22,13 +22,13 @@ export default function ProductCard({product}:{product:Product}) {
         loading='eager' 
         width={700} 
         height={700}
-        className={`w-full h-64 transition-transform bg-shop-light-purple hoverEffect ${product?.stock!==0?"group-hover:scale-105":"opacity-50"}`}
+        className={`w-full h-64 transition-transform   hoverEffect ${product?.stock!==0?"group-hover:scale-105":"opacity-50"}`}
         />}
 
         <AddToWishlistButoon product={product} />
         
-        {product?.status === "sale" && <p className='absolute top-2 left-2 bg-black text-white z-10 text-xs border border-black rounded-full px-1 ml-1 group-hover:border-shop-dark-green group-hover:text-black group-hover:bg-shop-dark-cyan hoverEffect'>Sale!</p>}
-        {product?.status === "new" && <p className='absolute top-2 left-2 bg-white text-shop-dark-purple animate-pulse z-10 text-xs border border-black rounded-full px-1 ml-1 group-hover:border-shop-dark-green group-hover:text-black group-hover:bg-shop-dark-cyan hoverEffect'>New!</p>}
+        {product?.status === "sale" && <p className='absolute top-2 left-2 bg-shop-light-background dark:bg-shop-dark-background text-black dark:text-white z-10 text-xs border border-black rounded-full px-1 ml-1 group-hover:border-shop-safety-orange group-hover:text-black  hoverEffect'>Sale!</p>}
+        {product?.status === "new" && <p className='absolute top-2 left-2 bg-shop-light-background dark:bg-shop-dark-background text-black dark:text-white animate-pulse z-10 text-xs border border-black rounded-full px-1 ml-1 group-hover:border-shop-dark-green group-hover:text-black group-hover:bg-shop-dark-cyan hoverEffect'>New!</p>}
         {product?.status === "hot" && 
         <Link
             href={"/deal"}
@@ -42,10 +42,10 @@ export default function ProductCard({product}:{product:Product}) {
           </Link>}
       </div>
       <div className='p-3 flex flex-col font-black'>
-      <p className='text-shop-light-gray uppercase text-xs line-clamp-1'>
+      <p className='text-gray-400 uppercase text-xs line-clamp-1'>
         {product?.categories?.map((cat)=>cat).join(", ")}
       </p>
-      <Title className='text-black text-sm line-clamp-1 uppercase'>{product?.name}</Title>
+      <Title className='text-black dark:text-shop-light-background text-sm line-clamp-1 uppercase'>{product?.name}</Title>
       <div className='flex items-center gap-2'>
         <div className='flex items-center'>
           {[...Array(5)].map((_,index)=>(
@@ -54,9 +54,9 @@ export default function ProductCard({product}:{product:Product}) {
           <p className='text-shop-dark-orange tracking-wide text-xs'>5 Reviews</p>
         </div>
       </div>
-      <div className='flex items-center gap-2.5  text-black'>
+      <div className='flex items-center gap-2.5  text-black dark:text-shop-dark-text'>
           <p className='font-medium'>In-Stock:</p>
-          <p className={`text-sm ${product?.stock===0?"text-red-600":" text-shop-dark-purple/80 font-semibold"} `}>{(product?.stock as number)>0?product?.stock:"unavailable"}</p>
+          <p className={`text-sm ${product?.stock===0?"text-red-600":" dark:text-teal-400 font-semibold"} `}>{(product?.stock as number)>0?product?.stock:"unavailable"}</p>
       </div>
        <PriceView price={product?.price} discount={product?.discountPrice} className="text-sm"/>
        <AddToCartButton product={product} className={` rounded-full`}/>

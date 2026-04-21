@@ -11,12 +11,13 @@ import { currentUser } from '@clerk/nextjs/server'
 
 import { ClerkLoaded, UserButton } from '@clerk/nextjs'
 import { cn } from '@/lib/utils'
+import Themetoggle from './themetoggle'
 
 export default async function Header({className}:{className?:string}) {
   const user=await currentUser()
   return (
-    <header className={cn(`bg-white/70 py-3 border-b border-gray-200 sticky top-0 backdrop-blur-md z-50 `,className)}>
-        <Container className='flex items-center justify-between max-w-full'>
+    <header className={cn(` py-3 border-b border-gray-200 sticky top-0 dark:bg-shop-dark-background/70 backdrop-blur-md z-50 `,className)}>
+        <Container className='flex items-center bg-shop-light-background/70  dark:shadow-shop-dark-background/70 justify-between max-w-full backdrop-blur-md z-50' >
             <div className='w-auto gap-2.5 md:w-1/3 flex md:gap-0 items-center justify-start '>
               <MobileMenu />
               <Logo className='ml-auto'/>
@@ -26,12 +27,13 @@ export default async function Header({className}:{className?:string}) {
                 <SearchBar />
                 <CartIcon />
                 <FavouriteButton />
-                <ClerkLoaded>
-                  <UserButton />
-                  {!user && <SignIn />}
+                <ClerkLoaded >
+                  <UserButton  />
+                  {!user && <SignIn/>}
                 </ClerkLoaded>
             </div>
-              <div id="google_translate_element"/>
+            <Themetoggle/>
+              {/* <div id="google_translate_element"/> */}
         </Container>
     </header>
   )

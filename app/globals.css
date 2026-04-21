@@ -6,27 +6,17 @@
 
 @theme{
   --font-poppins: Poppins, sans-serif;
-  --color-shop-light-pink: #ffb6c1;
-  --color-shop-dark-pink: #ff69b4;
-  --color-shop-light-blue: #add8e6;
-  --color-shop-dark-blue: #0000ff;
-  --color-shop-light-green: #90ee90;
-  --color-shop-dark-green: #008000;
-  --color-shop-light-yellow: #ffffe0;
-  --color-shop-dark-yellow: #ffff00;
-  --color-shop-light-purple: #dda0dd;
-  --color-shop-dark-purple: #800080;
-  --color-shop-light-orange: #ffcc99;
-  --color-shop-dark-orange: #ff8c00;
-  --color-shop-light-gray: #d3d3d3;
-  --color-shop-dark-gray: #a9a9a9;
-  --color-shop-light-brown: #f4a460;  
-  --color-shop-dark-brown: #8b4513;
-  --color-shop-light-cyan: #e0ffff;
-  --color-shop-dark-cyan: #00ffff;
-  --color-darkColor: #333333;
-  --color-lightColor: #f5f5f5;
-  --color-shop-lighter:#f1f3f8
+  --color-shop-light-background: #F8F9FA;
+  --color-shop-dark-background: #0B111D;
+  --color-shop-light-text: #1B263B;
+  --color-shop-dark-text: #E0E1DD;
+  --color-shop-dark-border:#E0E1DD;
+  --color-shop-light-border:#1B263B;
+  --color-shop-safety-orange:#FB8500;
+  --color-shop-safety-orange:#FB8500;
+  --color-shop-dark-product:#1B263B;
+  --color-shop-steel-look:#8D99AE;
+  --color-shop-active:#FB8;
 
 }
 

@@ -15,8 +15,8 @@ import { Input } from './ui/input'
 
 export default function Footer() {
   return (
-    <footer className=' border-t bg-lightColor'>
-        <Container className='max-w-full'>
+    <footer className=' border-t bg-lightColor '>
+        <Container className='max-w-full '>
             <FooterTop />
             <div className='grid grid-cols-1 md:grid-col-2 lg:grid-cols-4 gap-10 py-10'>
               <div className='space-y-4'>
@@ -25,7 +25,7 @@ export default function Footer() {
                   Redefining the digital marketplace through cutting-edge design and a 
                   user-first approach. We are committed to providing a seamless, 
                   secure, and premium shopping experience.</Subtext>
-                <SocialMedia className='text-darkColor/60' iconClassname='hover:border-shop-dark-green' tooltipclassname='bg-darkColor/80 text-white'/>
+                <SocialMedia className='text-black' iconClassname='hover:border-black' tooltipclassname='bg-darkColor/80 text-black'/>
               </div>
               <div>
                 <Subtitle>Quick Links</Subtitle>

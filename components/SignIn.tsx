@@ -6,7 +6,7 @@ export default function SignIn() {
   return (
     <SignInButton mode='modal'>
           <button
-          className='text-sm text-black font-semibold hover:border-shop-dark-gray hover:cursor-pointer hoverEffect' 
+          className='text-sm text-shop-light-text dark:text-shop-dark-text pr-3 font-semibold hover:border-shop-dark-gray hover:cursor-pointer hoverEffect' 
           >Login
           </button>
     </SignInButton>

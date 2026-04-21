@@ -10,7 +10,7 @@ export  function Title({children,className}:{children:React.ReactNode,className?
 }
 export  function Subtitle({children,className}:{children:React.ReactNode,className?:string}) {
   return (
-    <h3 className={cn('font-semibold text-gray-900 font-sans', className)}>
+    <h3 className={cn('font-semibold text-gray-900 dark:text-shop-dark-text font-sans', className)}>
       {children}
     </h3>
   )

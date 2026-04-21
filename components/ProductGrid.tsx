@@ -38,7 +38,7 @@ useEffect(()=>{
     <div>
     <HomeTabBar selectedTab={activeTab} onTabselect={setActiveTab}/>
     {loading?(
-    <div className='flex flex-col items-center justify-center p-10 min-h-80 gap-4 bg-gray-100 w-full text-shop-dark-purple mt-10'>
+    <div className='flex flex-col items-center justify-center p-10 min-h-80 gap-4 bg-shop-light-background dark:bg-shop-dark-background w-full text-shop-light-text dark:text-shop-light-background mt-10'>
       <div className='space-x-2 flex items-center '>
         <Loader2 className='w-5 h-6 animate-spin'/>
         <span>Product is loading...</span>

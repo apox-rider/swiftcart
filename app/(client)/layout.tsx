@@ -6,13 +6,14 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import Script from "next/script";
+import { ThemeProvider } from "next-themes";
  
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
-  title: "SwiftCart",
-  description: "An e-commerce platform for swift and seamless shopping experience.",
+  title: "JengaCloud",
+  description: "An e-commerce platform for swift and seamless shopping experience for hardwares and building materials.",
 };
 
 export default function RootLayout({
@@ -22,6 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
+      <ThemeProvider attribute="class" enableSystem defaultTheme="system">
         <Script id="google-translate-init" strategy="afterInteractive">
             {`
               function googleTranslateElementInit() {
@@ -48,6 +50,7 @@ export default function RootLayout({
             </div>
           </TooltipProvider>
           <Footer />
+      </ThemeProvider>
 
     </ClerkProvider>
   );

@@ -21,7 +21,7 @@ export default function NoProduct({selectedTab,className,isShop}:{selectedTab?:s
       initial={{opacity:0}}
       animate={{opacity:1}}
       transition={{delay:0.2,duration:0.5}}
-      className='text-gray-600'>
+      className='text-shop-steel-look'>
         We&apos;re sorry, but no products matching on {" "} 
         <span className='text-base font-semibold text-darkColor'>
           {selectedTab}

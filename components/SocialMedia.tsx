@@ -34,7 +34,7 @@ export default function SocialMedia({className,iconClassname,tooltipclassname}: 
       ];
   return (
       <TooltipProvider >
-          <div className={cn(`flex items-center gap-3.5 `, className)} >
+          <div className={cn(`flex items-center gap-3.5  `, className)} >
             {socialMediaLinks.map((item) => (
                     <Tooltip key={item.name}>
                         <TooltipTrigger asChild>
@@ -42,12 +42,12 @@ export default function SocialMedia({className,iconClassname,tooltipclassname}: 
                             key={item.name}
                             href={item.link}
                             target="_blank"
-                            className={cn('p-2 border rounded-full hover:text-shop-light-green hoverEffect', tooltipclassname)}
+                            className={cn('p-2 border bg-black rounded-full hover:text-shop-light-text text-black dark:text-shop-dark-text hoverEffect', tooltipclassname)}
                         >
                             {item.icon}
                         </Link>
                         </TooltipTrigger>
-                        <TooltipContent className={cn('bg-white font-semibold text-darkColor ', tooltipclassname)}>
+                        <TooltipContent className={cn('font-semibold hover:text-shop-light-text dark:text-shop-dark-text  ', tooltipclassname)}>
                             <p key={item.name}>{item.name}</p>
                         </TooltipContent>
                     </Tooltip>

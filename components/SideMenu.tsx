@@ -16,12 +16,12 @@ export default function SideMenu({ isopen, onclose }: SideMenuProps) {
     return (
     <div className={`fixed inset-y-0 h-screen left-0
     z-50 w-full bg-black/50 shadow-xl ${isopen ? 'translate-x-0' : '-translate-x-full'} hoverEffect `}>
-      <div ref={sidebarRef} className='min-w-72 max-w-96 bg-black text-white h-screen p-10 border-r border-r-shop-dark-green flex flex-col gap-6'>
+      <div ref={sidebarRef} className='min-w-72 max-w-96 bg-shop-light-background dark:shadow-shop-dark-background text-white h-screen p-10 border-r border-r-shop-dark-green flex flex-col gap-6'>
         <div className='flex items-center gap-5 justify-between'>
-            <Logo className='text-white' spanDesign="group-hover:text-white"/>
+            <Logo />
             <button 
             onClick={onclose}
-            className='hover:text-shop-light-green hover:cursor-pointer hoverEffect  '>
+            className='hover:text-shop-light-text dark:text-shop-dark-text text-black  hover:cursor-pointer hoverEffect  '>
                 <X  />
             </button>
         </div>
@@ -30,18 +30,18 @@ export default function SideMenu({ isopen, onclose }: SideMenuProps) {
                 <a 
                 key={item.name}
                 href={item.link}
-                className={`hover:text-shop-light-green hoverEffect ${pathname === item?.link && 'text-shop-light-green'}`}
+                className={`hover:text-shop-active hoverEffect text-shop-light-text dark:text-shop-dark-text ${pathname === item?.link && 'text-shop-safety-orange'}`}
                 >
                     {item.name}
                 </a>
             ))}
             <span className='bg-shop-dark-cyan h-0.5 min-w-full  '/>            
         </div>
-        <SocialMedia className='border-b border-white'/>
-        {/* <div className='flex flex-col'>
+        <SocialMedia className='text-black' iconClassname='hover:border-black' tooltipclassname='bg-darkColor/80 text-black'/>
+        <div className='flex flex-col'>
           <p>Translator</p>
           <div  id="google_translate_element"/>
-        </div> */}
+        </div>
       </div>
     </div>
   )

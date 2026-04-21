@@ -19,7 +19,7 @@ export default function AddToCartButton({product,className}:Props) {
     <Button 
     onClick={handleAddtoCart}
     disabled={isOutOfStock}
-    className={cn('w-full font-semibold tracking-wide text-white bg-black md:bg-black/80  rounded-full hover:bg-white hover:text-shop-dark-purple hoverEffect',className)}>
+    className={cn('w-full font-semibold tracking-wide bg-shop-safety-orange  rounded-full hover:bg-[#E07A00] hover:text-shop-dark-purple hoverEffect',className)}>
       <ShoppingBagIcon/>{isOutOfStock?"Out Of Stock":"Add to Cart"}
     </Button>
     </div>
